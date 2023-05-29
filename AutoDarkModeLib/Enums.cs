@@ -58,17 +58,18 @@ namespace AutoDarkModeLib
 
     public enum SwitchSource
     {
-        Any,
-        TimeSwitchModule,
-        NightLightTrackerModule,
-        BatteryStatusChanged,
-        SystemResume,
-        Manual,
-        ExternalThemeSwitch,
-        Startup,
-        SystemUnlock,
-        Api,
-        SystemTimeChanged
+        Any = 0,
+        TimeSwitchModule = 1,
+        NightLightTrackerModule = 2,
+        BatteryStatusChanged = 3,
+        SystemResume = 4,
+        Manual = 5,
+        ExternalThemeSwitch = 6,
+        Startup = 7,
+        SystemUnlock = 8,
+        Api = 9,
+        SystemTimeChanged = 10,
+        AmbientLight = 11
     }
 
     public enum ThemeOverrideSource
@@ -78,7 +79,8 @@ namespace AutoDarkModeLib
         NightLight,
         ForceFlag,
         BatteryStatus,
-        PostponeManager
+        PostponeManager,
+        AmbientLight,
     }
 
     public enum Governor

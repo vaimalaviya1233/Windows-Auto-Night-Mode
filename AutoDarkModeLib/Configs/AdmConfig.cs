@@ -32,6 +32,7 @@ namespace AutoDarkModeLib.Configs
             Tunable = new();
             GPUMonitoring = new();
             Events = new();
+            AmbientLightSwitch = new();
             WindowsThemeMode = new();
             Updater = new();
             Hotkeys = new();
@@ -64,6 +65,7 @@ namespace AutoDarkModeLib.Configs
         public Tunable Tunable { get; set; }
         public GPUMonitoring GPUMonitoring { get; set; }
         public Events Events { get; set; }
+        public AmbientLightSwitch AmbientLightSwitch { get; set; }
         public Notifications Notifications { get; set; }
         public AutoSwitchNotify AutoSwitchNotify { get; set; }
         public Hotkeys Hotkeys { get; set; }
@@ -137,6 +139,11 @@ namespace AutoDarkModeLib.Configs
     {
         public bool DarkThemeOnBattery { get; set; }
         public bool Win10AllowLockscreenSwitch { get; set; } = false;
+    }
+
+    public class AmbientLightSwitch
+    {
+        public bool Enabled { get; set; }
     }
 
     public class Location

@@ -26,10 +26,12 @@ namespace AutoDarkModeSvc.Timers
         public const int Short = 60000;
         // IO Timer is 2h
         public const int IO = 7200000;
-        //location Timer is 1h
+        // location Timer is 1h
         public const int Location = 3600000;
-        //update timer for system state
+        // update timer for system state
         public const int StateUpdate = 300000;
+        // timer for sensor polling
+        public const int SensorPoll = 1000;
 
     }
 }

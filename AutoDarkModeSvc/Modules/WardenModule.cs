@@ -60,6 +60,7 @@ namespace AutoDarkModeSvc.Modules
             //AutoManageModule(typeof(ThemeUpdateModule), true, config.WindowsThemeMode.Enabled && config.WindowsThemeMode.MonitorActiveTheme);
             AutoManageModule(typeof(GPUMonitorModule), true, config.GPUMonitoring.Enabled);
             AutoManageModule(typeof(UpdaterModule), true, config.Updater.Enabled);
+            AutoManageModule(typeof(AmbientLightModule), true, config.AmbientLightSwitch.Enabled);
         }
 
         /// <summary>

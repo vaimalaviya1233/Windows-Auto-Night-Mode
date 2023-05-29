@@ -34,12 +34,12 @@ namespace AutoDarkModeSvc.Events
             Theme = requestedTheme;
         }
 
-        public SwitchEventArgs(SwitchSource source, Theme requestedTheme, DateTime time, bool refreshDwm = false)
+        public SwitchEventArgs(SwitchSource source, Theme requestedTheme, DateTime time, bool dwmRefreshRequired = false)
         {
             Source = source;
             Theme = requestedTheme;
             SwitchTime = time;
-            RefreshDwm = refreshDwm;
+            DwmRefreshRequired = dwmRefreshRequired;
         }
 
         public void OverrideTheme(Theme newTheme, ThemeOverrideSource overrideSource)
@@ -64,7 +64,7 @@ namespace AutoDarkModeSvc.Events
             SwitchTime = time;
         }
 
-        public bool RefreshDwm { get; }
+        public bool DwmRefreshRequired { get; }
         public SwitchSource Source { get; }
         private List<ThemeOverrideSource> _themeOverrideSources { get; } = new();
         public ReadOnlyCollection<ThemeOverrideSource> ThemeOverrideSources { get { return new(_themeOverrideSources); } }

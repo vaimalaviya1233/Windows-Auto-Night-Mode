@@ -96,13 +96,15 @@ namespace AutoDarkModeSvc
             ModuleTimer IOTimer = new(TimerFrequency.IO, TimerName.IO);
             ModuleTimer GeoposTimer = new(TimerFrequency.Location, TimerName.Geopos);
             ModuleTimer StateUpdateTimer = new(TimerFrequency.StateUpdate, TimerName.StateUpdate);
+            ModuleTimer SensorPollTimer = new(TimerFrequency.SensorPoll, TimerName.SensorPoll);
 
             Timers = new List<ModuleTimer>()
             {
                 MainTimer,
                 IOTimer,
                 GeoposTimer,
-                StateUpdateTimer
+                StateUpdateTimer,
+                SensorPollTimer
             };
 
             WardenModule warden = new("ModuleWarden", Timers, true);

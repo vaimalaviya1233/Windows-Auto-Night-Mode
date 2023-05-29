@@ -26,5 +26,6 @@ namespace AutoDarkModeSvc.Timers
         public const string IO = "io";
         public const string Geopos = "geopos";
         public const string StateUpdate = "state_update";
+        public const string SensorPoll = "sensor_poll";
     }
 }

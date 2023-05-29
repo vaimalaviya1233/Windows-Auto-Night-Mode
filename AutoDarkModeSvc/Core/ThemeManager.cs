@@ -78,6 +78,17 @@ namespace AutoDarkModeSvc.Core
                 }
             }
 
+            if (builder.Config.AmbientLightSwitch.Enabled && e.Theme != Theme.Unknown)
+            {
+                // ambient light takes priority over all modules except for dark theme on battery
+                if (e.Source != SwitchSource.AmbientLight)
+                {
+                    e.OverrideTheme(state.AmbientLight.Requested, ThemeOverrideSource.Default);
+                }
+                UpdateTheme(e);
+                return;
+            }
+
             // process switches with a requested theme set before automatic ones
             if (e.Theme != Theme.Automatic)
             {

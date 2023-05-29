@@ -41,21 +41,20 @@ namespace AutoDarkModeSvc.Modules
             DateTime lastInputTime = DateTime.Now.AddMilliseconds(-(Environment.TickCount - lastinputStruct.dwTime));
             if (lastInputTime <= DateTime.Now.AddMinutes(-builder.Config.IdleChecker.Threshold))
             {
-                State.SystemIdleModuleState.SystemIsIdle = true;
+                State.SystemIdle.SystemIsIdle = true;
                 Logger.Info($"allow theme switch, system idle since {lastInputTime}, which is longer than {builder.Config.IdleChecker.Threshold} minute(s)");
                 State.PostponeManager.Remove(Name);
             }
             else if (State.PostponeManager.Add(new(Name, isUserClearable: false)))
             {
-                State.SystemIdleModuleState.SystemIsIdle = false;
+                State.SystemIdle.SystemIsIdle = false;
                 Logger.Info("postponing theme switch due to system idle timer");
             }
         }
 
         public override void DisableHook()
         {
-            base.DisableHook();
-            State.SystemIdleModuleState.SystemIsIdle = false;
+            State.SystemIdle.SystemIsIdle = false;
             State.PostponeManager.Remove(Name);
         }
 

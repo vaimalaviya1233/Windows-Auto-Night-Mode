@@ -63,10 +63,5 @@ namespace AutoDarkModeSvc.Modules
                 });
             }
         }
-
-        public override void DisableHook()
-        {
-            base.DisableHook();
-        }
     }
 }
